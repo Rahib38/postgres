@@ -49,3 +49,38 @@ SELECT * FROM students
     WHERE country = 'USA' OR country = 'Bangladesh';
 SELECT * FROM students
     WHERE (country = 'USA' OR country = 'Bangladesh')AND age=20;
+
+SELECT * FROM students
+    WHERE NOT country = 'USA';
+SELECT * FROM students
+    WHERE email IS NULL;
+SELECT COALESCE(email, 'Email is not provided') as "Email", blood_group,first_name from students;
+
+
+SELECT * FROM students
+    WHERE country IN('USA','Bangladesh');
+SELECT * FROM students
+    WHERE country NOT IN('USA','Bangladesh');
+SELECT * FROM students
+    WHERE age BETWEEN 19 and 25;
+SELECT * FROM students
+    WHERE first_name LIKE '%n';
+SELECT * FROM students
+    WHERE first_name LIKE '_a%';
+SELECT * FROM students
+    WHERE first_name LIKE '_a__';
+SELECT * FROM students
+    WHERE first_name ILIKE 'a%';
+SELECT * FROM students LIMIT 5;
+SELECT * FROM students LIMIT 5 OFFSET 5 * 0;
+SELECT * FROM students LIMIT 5 OFFSET 5 * 1;
+SELECT * FROM students LIMIT 5 OFFSET 5 * 2;
+SELECT * FROM students LIMIT 5 OFFSET 5 * 3;
+SELECT * FROM students;
+
+DELETE FROM students
+WHERE grade ='B';
+
+UPDATE students
+set email = 'default@gmail.com'
+WHERE student_id =5
